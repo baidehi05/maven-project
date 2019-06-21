@@ -11,6 +11,12 @@ pipeline {
                 echo 'Bilding the project...'
 		bat label: '', script: 'mvn clean package'
             }
+	    post {
+		success {
+			echo 'Archiving Artificts...'
+			archiveArtifacts artifacts: '**/*.war'
+		}
+	    }
         }
     }
 }
