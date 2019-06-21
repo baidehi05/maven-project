@@ -22,7 +22,7 @@ pipeline {
 	stage('CheckStyle') {
             steps {
                 echo 'CheckStyle...'
-		checkstyle canComputeNew: false, defaultEncoding: '', healthy: '', pattern: 'clean package checkstyle:checkstyle', unHealthy: ''
+		checkstyle pattern: 'checkstyle:checkstyle'
             }
         }
     }
